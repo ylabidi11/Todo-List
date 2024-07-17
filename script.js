@@ -6,9 +6,12 @@ const DisplayTodos = () => {
     for (let i = 0; i < todos.length; i++) {
         let li = document.createElement('li')
         li.innerText = ' ' + todos[i].todo
+        li.className = "each-todo"
         li.id = 'edit-' + i
 
-        li.addEventListener('dblclick', Edit)
+        li.addEventListener('dblclick', (event) => {
+            (event.target.type !== "checkbox" && event.target.type !== "submit") && Edit(event)
+        })
 
         // Button for each li
 
