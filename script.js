@@ -37,7 +37,7 @@ const DisplayTodos = () => {
 
 
         li.appendChild(toggleButton)
-        li.appendChild(document.createTextNode(' ' + todos[i].todo))
+        li.appendChild(document.createTextNode(todos[i].todo))
         li.appendChild(newRemove)
 
         ulList.appendChild(li)
@@ -97,7 +97,7 @@ const Edit = (event) => {
     let input = document.createElement('input')
     input.id = 'input-d'
 
-    input.value = ' ' + li.innerText.slice(0, li.innerText.length - 1)
+    input.value = li.innerText.slice(0, li.innerText.length - 1)
 
     li.replaceWith(input)
 
