@@ -124,6 +124,16 @@ const DeleteAll = () => {
     DisplayTodos()
 }
 
+const DeleteCompleted = () => {
+    for (let i = 0; i < todos.length; i++) {
+        if (todos[i].completed === true) {
+            todos.splice(i, 1)
+            i -= 1
+        }
+    }
+    DisplayTodos()
+}
+
 let addButton = document.getElementById("add-todo-button")
 addButton.addEventListener('click', Add)
 
@@ -132,6 +142,9 @@ toggleAllButton.addEventListener('click', ToggleAll)
 
 let deleteAllButton = document.getElementById("delete-all-button")
 deleteAllButton.addEventListener('click', DeleteAll)
+
+let deleteAllCompleted = document.getElementById("delete-completed-button")
+deleteAllCompleted.addEventListener('click', DeleteCompleted)
 
 let addInput = document.getElementById("input-todo")
 addInput.addEventListener('keypress', (event) => {
