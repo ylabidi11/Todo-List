@@ -12,8 +12,12 @@ h1 {
     color: #5E503F
 }
 
+.hr {
+    border-color: #5E503F;
+}
+
 hr {
-    background-color: #22333B;
+    border-color: inherit;
 }
 
 .todo {
@@ -24,7 +28,7 @@ hr {
     border-radius: 1em;
     margin-top: 15em;
     position: relative;
-    padding-bottom: 4em;
+    padding-bottom: 7em;
 }
 
 .add-todo {
@@ -35,12 +39,12 @@ hr {
 
 input {
     width: 70%;
-    border: 1px solid lightgray;
+    border: 1px solid #5E503F;
 }
 
 #add-todo-button {
     width: 5em;
-    border-color: transparent;
+    border-color: #5E503F;
     background-color: #d4ccc3;
     color: #5E503F;
     font-weight: bold;
@@ -49,6 +53,7 @@ input {
 #add-todo-button:hover {
     background-color: #22333B;
     color: #EAE0D5;
+    border-color: transparent;
 }
 
 #input-d {
@@ -71,6 +76,7 @@ li {
     list-style-type: none;
     color: #22333B;
     position: relative;
+    font-weight: bold;
 }
 
 li input {
@@ -91,13 +97,20 @@ li input:checked {
 
 li button {
     position: absolute;
-    margin-left: 40em;
+    margin-left: 37.8em;
     padding: 0.7em;
     font-weight: bold;
     color: #5E503F;
     border-radius: 0.6em;
     background-color: #d4ccc3;
     top: 0%;
+    border-color: #5E503F;
+}
+
+li button:hover {
+    border-color: transparent;
+    background-color: #22333B;
+    color: #d4ccc3;
 }
 
 .crossed {
@@ -118,7 +131,7 @@ li button {
 
 .all-buttons button {
     background-color: #d4ccc3;
-    border-color: transparent;
+    border-color: #5E503F;
     color: #5E503F;
     font-weight: bold;
     padding: 1rem;
@@ -129,10 +142,12 @@ li button {
 .all-buttons button:hover {
     background-color: #22333B;
     color: #EAE0D5;
+    border-color: transparent;
 }
 
 .author {
     background-color: white;
+    color: #0A0908;
     width: 16em;
     text-align: center;
     font-weight: bold;
@@ -150,7 +165,7 @@ li button {
 }
 
 ul::-webkit-scrollbar {
-    width: 1em;
+    width: 0.8em;
 }
 
 ul::-webkit-scrollbar-track {
@@ -159,12 +174,12 @@ ul::-webkit-scrollbar-track {
 }
 
 ul::-webkit-scrollbar-thumb {
-    background: #0A0908;
+    background: #7a736a;
     border-radius: 10px;
 }
 
 ul::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: #5E503F;
 }
 
 ul::-webkit-scrollbar-corner {
