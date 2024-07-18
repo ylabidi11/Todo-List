@@ -3,14 +3,17 @@
 }
 
 body {
-    background-color: #22333B;
-
+    background-color: #22333B
 }
 
 h1 {
     padding-top: 1em;
     text-align: center;
     color: #5E503F
+}
+
+hr {
+    background-color: #22333B;
 }
 
 .todo {
@@ -20,11 +23,13 @@ h1 {
     margin: auto;
     border-radius: 1em;
     margin-top: 15em;
+    position: relative;
+    padding-bottom: 4em;
 }
 
 .add-todo {
-    padding: 1rem;
-    margin: 1em;
+    padding: 1rem 1rem;
+    margin: 1em 1em;
     border-radius: 0.5em;
 }
 
@@ -52,25 +57,46 @@ ul input {
     border-color: #22333B;
 }
 
+ul {
+    height: 25em;
+    overflow: hidden;
+    overflow-y: scroll;
+    overflow-x: scroll;
+}
+
 li {
-    line-height: 2;
-    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    line-height: 1.5;
+    margin-bottom: 2em;
+    font-size: 1em;
     list-style-type: none;
     color: #22333B;
+    position: relative;
 }
 
 li input {
-    width: 1em;
+    margin-right: 2em;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
 
+li input:checked {
+    background-color: #22333B
 }
 
 li button {
-    margin-left: 35em;
+    position: absolute;
+    margin-left: 40em;
     padding: 0.7em;
     font-weight: bold;
     color: #5E503F;
     border-radius: 0.6em;
     background-color: #d4ccc3;
+    top: 50%;
 }
 
 .crossed {
@@ -79,15 +105,14 @@ li button {
 
 .all-buttons {
     display: flex;
-    margin-bottom: 3em;
+    position: absolute;
+    width: 100%;
     font-weight: bold;
-    color: #5E503F
+    color: #5E503F;
 }
 
 #counter {
-    margin-top: 1.8em;
-    margin-left: 2em;
-    margin-right: 15.7em;
+    margin: 1.7em 15em 0em 3em;
 }
 
 .all-buttons button {
@@ -121,4 +146,26 @@ li button {
 #name {
     color: #22333B;
     font-size: 1;
+}
+
+ul::-webkit-scrollbar {
+    width: 1em;
+}
+
+ul::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+}
+
+ul::-webkit-scrollbar-thumb {
+    background: #0A0908;
+    border-radius: 10px;
+}
+
+ul::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+ul::-webkit-scrollbar-corner {
+    background: #EAE0D5;
 }
