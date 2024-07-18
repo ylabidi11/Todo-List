@@ -42,8 +42,12 @@ input {
     border: 1px solid #5E503F;
 }
 
+#input-todo {
+    width: 24.5em;
+}
+
 #add-todo-button {
-    width: 5em;
+    width: 13.2em;
     border-color: #5E503F;
     background-color: #d4ccc3;
     color: #5E503F;
