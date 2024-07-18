@@ -3,6 +3,8 @@ const todos = []
 const DisplayTodos = () => {
     let ulList = document.getElementById("todos-list")
     ulList.innerHTML = ""
+    document.getElementById("counter").innerText = todos.length + " Left"
+
     for (let i = 0; i < todos.length; i++) {
         let li = document.createElement('li')
         li.innerText = ' ' + todos[i].todo
