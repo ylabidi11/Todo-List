@@ -6,7 +6,6 @@ const DisplayTodos = () => {
     for (let i = 0; i < todos.length; i++) {
         let li = document.createElement('li')
         li.innerText = ' ' + todos[i].todo
-        li.className = "each-todo"
         li.id = 'edit-' + i
 
         li.addEventListener('dblclick', (event) => {
@@ -29,9 +28,12 @@ const DisplayTodos = () => {
 
         if (todos[i].completed) {
             toggleButton.checked = true
+            li.className = "crossed"
         } else {
             toggleButton.checked = false
+            li.className = "not-crossed"
         }
+
 
         li.appendChild(toggleButton)
         li.appendChild(newButton)
