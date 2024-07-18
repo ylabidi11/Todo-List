@@ -124,3 +124,10 @@ toggleAllButton.addEventListener('click', ToggleAll)
 
 let deleteAllButton = document.getElementById("delete-all-button")
 deleteAllButton.addEventListener('click', DeleteAll)
+
+let addInput = document.getElementById("input-todo")
+addInput.addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') {
+        Add()
+    }
+})
