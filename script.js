@@ -7,19 +7,18 @@ const DisplayTodos = () => {
 
     for (let i = 0; i < todos.length; i++) {
         let li = document.createElement('li')
-        li.innerText = ' ' + todos[i].todo
         li.id = 'edit-' + i
 
         li.addEventListener('dblclick', (event) => {
             (event.target.type !== "checkbox" && event.target.type !== "submit") && Edit(event)
         })
 
-        // Button for each li
+        // Remove for each li
 
-        let newButton = document.createElement('button')
-        newButton.id = 'remove-' + i
-        newButton.addEventListener('click', Remove)
-        newButton.innerHTML = 'X'
+        let newRemove = document.createElement('button')
+        newRemove.id = 'remove-' + i
+        newRemove.addEventListener('click', Remove)
+        newRemove.innerHTML = 'X'
 
         // Toggle for each li
 
@@ -30,15 +29,16 @@ const DisplayTodos = () => {
 
         if (todos[i].completed) {
             toggleButton.checked = true
-            li.className = "crossed"
+            li.className = "crossed both"
         } else {
             toggleButton.checked = false
-            li.className = "not-crossed"
+            li.className = "not-crossed both"
         }
 
 
         li.appendChild(toggleButton)
-        li.appendChild(newButton)
+        li.appendChild(document.createTextNode(' ' + todos[i].todo))
+        li.appendChild(newRemove)
 
         ulList.appendChild(li)
     }
