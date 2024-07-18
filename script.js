@@ -46,8 +46,10 @@ const DisplayTodos = () => {
 
 const Add = () => {
     let input = document.getElementById("input-todo");
-    todos.push({ todo: input.value, completed: false })
-    input.value = ''
+    if (input.value !== undefined && input.value !== null && input.value !== '') {
+        todos.push({ todo: input.value, completed: false })
+        input.value = ''
+    }
 
     DisplayTodos()
 }
@@ -101,8 +103,12 @@ const Edit = (event) => {
 
     input.addEventListener('keypress', (event) => {
         if (event.key === "Enter") {
-            todos[index].todo = input.value
-            DisplayTodos()
+            if (input.value !== '' && input.value !== null && input.value !== undefined && input.value !== ' ') {
+                todos[index].todo = input.value
+                DisplayTodos()
+            } else {
+                window.alert("Please Don't Leave This Blank")
+            }
         }
     })
 
