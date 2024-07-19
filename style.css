@@ -43,11 +43,11 @@ input {
 }
 
 #input-todo {
-    width: 24.5em;
+    width: 54%;
 }
 
 #add-todo-button {
-    width: 13.2em;
+    width: 30%;
     border-color: #5E503F;
     background-color: #d4ccc3;
     color: #5E503F;
