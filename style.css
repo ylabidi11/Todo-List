@@ -7,7 +7,7 @@ body {
 }
 
 h1 {
-    padding-top: 1em;
+    padding-top: 5%;
     text-align: center;
     color: #5E503F;
 }
@@ -22,18 +22,17 @@ hr {
 
 .todo {
     background-color: #EAE0D5;
-    height: 50vh;
+    height: 70vh;
     width: 50vh;
     margin: auto;
-    border-radius: 1em;
-    margin-top: 15em;
+    border-radius: 2%;
+    margin-top: 2%;
     position: relative;
-    padding-bottom: 7em;
 }
 
 .add-todo {
-    padding: 1rem 1rem;
-    margin: 1em 1em;
+    padding: 2.6%;
+    margin: 2%;
     border-radius: 0.5em;
 }
 
@@ -61,11 +60,11 @@ input {
 }
 
 #input-d {
-    margin-bottom: 2.8em;
+    margin-bottom: 6.3%;
 }
 
 ul {
-    height: 25em;
+    height: 60%;
     overflow: hidden;
     overflow-y: scroll;
     overflow-x: scroll;
@@ -75,7 +74,7 @@ li {
     display: flex;
     align-items: center;
     line-height: 1.5;
-    margin-bottom: 2em;
+    margin-bottom: 7%;
     font-size: 1em;
     list-style-type: none;
     color: #22333B;
@@ -84,7 +83,7 @@ li {
 }
 
 li input {
-    margin-right: 2em;
+    margin-right: 5%;
     width: 1.5em;
     height: 1.5em;
     border-radius: 50%;
@@ -101,7 +100,7 @@ li input:checked {
 
 li button {
     position: absolute;
-    margin-left: 37.8em;
+    margin-left: 90%;
     padding: 0.7em;
     font-weight: bold;
     color: #5E503F;
@@ -131,7 +130,7 @@ li button:hover {
 
 #counter {
     font-size: 14px;
-    margin: 1.7em 6em 0em 3em;
+    margin: 5% 13% 0 8%;
 }
 
 .all-buttons button {
@@ -139,14 +138,10 @@ li button:hover {
     border-color: #5E503F;
     color: #5E503F;
     font-weight: bold;
-    padding: 1rem;
-    margin: 1em;
+    padding: 2%;
+    margin: 2.2% 1% 1% 1%;
     border-radius: 0.5em;
-    width: 8em;
-}
-
-#delete-completed-button {
-    width: 10em;
+    width: 16%;
 }
 
 .all-buttons button:hover {
@@ -158,14 +153,14 @@ li button:hover {
 .author {
     background-color: white;
     color: #0A0908;
-    width: 16em;
+    width: 15em;
     text-align: center;
     font-weight: bold;
     font-family: Calibri;
     border-radius: 0.5em;
     margin: auto;
-    margin-top: 5em;
-    padding: 1em;
+    margin-top: 5vh;
+    padding: 1%;
     font-size: 1.2em;
 }
 
