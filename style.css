@@ -1,192 +1,94 @@
-* {
-    font-family: Verdana, Tahoma, sans-serif;
-}
-
 body {
     background-color: #22333B;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
-h1 {
-    padding-top: 5%;
-    text-align: center;
+button {
+    background-color: #d4ccc3;
+    padding: 15px;
     color: #5E503F;
+    border: 2px solid #5E503F;
+    border-radius: 0.5em;
+    text-transform: uppercase;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
 }
 
-.hr {
-    border-color: #5E503F;
-}
-
-hr {
-    border-color: inherit;
+button:hover {
+    background-color: #22333B;
+    color: #d4ccc3;
+    border: none;
+    cursor: pointer;
+    padding: 17px;
 }
 
 .todo {
-    background-color: #EAE0D5;
-    height: 70vh;
-    width: 50vh;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid red;
     margin: auto;
-    border-radius: 2%;
-    margin-top: 2%;
+    width: 40%;
+    height: 70vh;
+    background-color: #EAE0D5;
+    border-radius: 1em;
+    text-align: center;
     position: relative;
 }
 
-.add-todo {
-    padding: 2.6%;
-    margin: 2%;
-    border-radius: 0.5em;
-}
-
-input {
-    width: 70%;
-    border: 1px solid #5E503F;
+.add-todo-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 #input-todo {
-    width: 54%;
-}
-
-#add-todo-button {
-    width: 30%;
-    border-color: #5E503F;
-    background-color: #d4ccc3;
-    color: #5E503F;
-    font-weight: bold;
-}
-
-#add-todo-button:hover {
-    background-color: #22333B;
-    color: #EAE0D5;
-    border-color: transparent;
-}
-
-#input-d {
-    margin-bottom: 6.3%;
-}
-
-ul {
-    height: 60%;
-    overflow: hidden;
-    overflow-y: scroll;
-    overflow-x: scroll;
-}
-
-li {
-    display: flex;
-    align-items: center;
-    line-height: 1.5;
-    margin-bottom: 7%;
-    font-size: 1em;
-    list-style-type: none;
-    color: #22333B;
-    position: relative;
-    font-weight: bold;
-}
-
-li input {
-    margin-right: 5%;
-    width: 1.5em;
-    height: 1.5em;
-    border-radius: 50%;
-    box-sizing: border-box;
-    flex-shrink: 0;
-    appearance: none;
-    padding: 5px;
-    border-color: #22333B;
-}
-
-li input:checked {
-    background-color: #22333B;
-}
-
-li button {
-    position: absolute;
-    margin-left: 90%;
-    padding: 0.7em;
-    font-weight: bold;
-    color: #5E503F;
-    border-radius: 0.6em;
-    background-color: #d4ccc3;
-    top: 0%;
-    border-color: #5E503F;
-}
-
-li button:hover {
-    border-color: transparent;
-    background-color: #22333B;
-    color: #d4ccc3;
-}
-
-.crossed {
-    text-decoration: line-through;
+    width: 25em;
 }
 
 .all-buttons {
     display: flex;
-    position: absolute;
-    width: 120%;
-    font-weight: bold;
-    color: #5E503F;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-shrink: 2;
 }
 
-#counter {
-    font-size: 14px;
-    margin: 5% 13% 0 8%;
+#todos-list {
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    overflow: hidden;
+    overflow-y: scroll;
+    padding: 0;
 }
 
-.all-buttons button {
-    background-color: #d4ccc3;
-    border-color: #5E503F;
-    color: #5E503F;
-    font-weight: bold;
-    padding: 2%;
-    margin: 2.2% 1% 1% 1%;
-    border-radius: 0.5em;
-    width: 16%;
+#todos-list li {
+    padding-left: 5%;
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1em;
+    align-items: center;
 }
 
-.all-buttons button:hover {
-    background-color: #22333B;
-    color: #EAE0D5;
-    border-color: transparent;
+li>*:nth-child(1) {
+    flex: 1 1 10%;
 }
 
-.author {
-    background-color: white;
-    color: #0A0908;
-    width: 15em;
-    text-align: center;
-    font-weight: bold;
-    font-family: Calibri;
-    border-radius: 0.5em;
-    margin: auto;
-    margin-top: 5vh;
-    padding: 1%;
-    font-size: 1.2em;
+li>*:nth-child(2) {
+    flex: 1 1 85%;
+    text-align: left;
 }
 
-#name {
-    color: #22333B;
-    font-size: 1;
+li>*:nth-child(3) {
+    flex: 1 1 5%;
+    margin-right: 5%;
 }
 
-ul::-webkit-scrollbar {
-    width: 0.8em;
+li button {
+    padding: 5px;
 }
 
-ul::-webkit-scrollbar-track {
-    background: transparent;
-    border-radius: 10px;
-}
-
-ul::-webkit-scrollbar-thumb {
-    background: #7a736a;
-    border-radius: 10px;
-}
-
-ul::-webkit-scrollbar-thumb:hover {
-    background: #5E503F;
-}
-
-ul::-webkit-scrollbar-corner {
-    background: #EAE0D5;
+li button:hover {
+    padding: 7px;
 }

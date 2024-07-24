@@ -35,9 +35,11 @@ const DisplayTodos = () => {
             li.className = "not-crossed both"
         }
 
+        let span = document.createElement('span');
+        span.innerHTML = todos[i].todo
 
         li.appendChild(toggleButton)
-        li.appendChild(document.createTextNode(todos[i].todo))
+        li.appendChild(span)
         li.appendChild(newRemove)
 
         ulList.appendChild(li)

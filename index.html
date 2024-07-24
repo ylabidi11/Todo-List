@@ -5,19 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-Do</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="todo">
         <h1>To-Do List</h1>
-        <input type="text" placeholder="Enter Your Next To-do (Don't Exceed This Width)" class="add-todo"
-            id="input-todo">
-        <button class="add-todo" id="add-todo-button">Add</button>
-        <ul id="todos-list"></ul>
-        <div class="hr">
-            <hr>
+        <div class="add-todo-div">
+            <input type="text" placeholder="Enter Your Next To-do" class="add-todo" id="input-todo">
+            <button class="add-todo" id="add-todo-button">Add</button>
         </div>
+        <ul id="todos-list"></ul>
         <div class="all-buttons">
             <p id="counter">0 Left</p>
             <button id="toggle-all-button">Toggle All</button>
