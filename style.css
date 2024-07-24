@@ -1,6 +1,6 @@
 body {
     background-color: #22333B;
-    font-family: "Roboto", sans-serif;
+    font-family: Verdana, Tahoma, sans-serif;
     font-weight: 400;
     font-style: normal;
 }
@@ -12,7 +12,7 @@ button {
     border: 2px solid #5E503F;
     border-radius: 0.5em;
     text-transform: uppercase;
-    font-family: "Roboto", sans-serif;
+    font-family: Verdana, Tahoma, sans-serif;
     font-weight: 400;
 }
 
@@ -24,60 +24,95 @@ button:hover {
     padding: 17px;
 }
 
+h1 {
+    margin-top: 1em;
+}
+
 .todo {
     display: flex;
     flex-direction: column;
-    border: 1px solid red;
     margin: auto;
-    width: 40%;
+    width: 40vw;
     height: 70vh;
     background-color: #EAE0D5;
     border-radius: 1em;
     text-align: center;
-    position: relative;
+    margin-top: 5%;
 }
 
 .add-todo-div {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
+    margin-bottom: 2em;
+}
+
+.add-todo-div>*:nth-child(1) {
+    flex: 0 1 60%;
+}
+
+.add-todo-div>*:nth-child(2) {
+    flex: 0 1 20%;
 }
 
 #input-todo {
-    width: 25em;
+    border-radius: 15px;
+    height: 70%;
+    align-items: center;
+    border: 2px solid rgb(154, 152, 152);
 }
 
-.all-buttons {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-shrink: 2;
+#input-todo::placeholder {
+    text-align: center;
 }
 
 #todos-list {
     display: flex;
     flex-direction: column;
-    height: 50vh;
+    height: 46vh;
     overflow: hidden;
     overflow-y: scroll;
     padding: 0;
+    margin: 0;
+    margin-bottom: 2.4em;
+    border-bottom: 2px solid gray;
 }
 
 #todos-list li {
     padding-left: 5%;
     display: flex;
     gap: 1rem;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
     align-items: center;
 }
 
 li>*:nth-child(1) {
-    flex: 1 1 10%;
+    flex: none;
+    width: 1.38em;
+    height: 1.3em;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #5E503F;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+li>*:nth-child(1):checked {
+    background-color: #22333B;
+    border: none;
 }
 
 li>*:nth-child(2) {
     flex: 1 1 85%;
     text-align: left;
+}
+
+span::first-letter {
+    text-transform: capitalize;
 }
 
 li>*:nth-child(3) {
@@ -91,4 +126,47 @@ li button {
 
 li button:hover {
     padding: 7px;
+}
+
+.all-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-shrink: 2;
+    align-items: center;
+}
+
+.author {
+    display: flex;
+    gap: 1em;
+    background-color: aliceblue;
+    width: 25vh;
+    flex-wrap: wrap;
+    flex-grow: 2;
+    margin: auto;
+    margin-top: 5em;
+    justify-content: center;
+    border-radius: 1em;
+    color: #22333B;
+}
+
+#name {
+    font-weight: 800;
+}
+
+#todos-list::-webkit-scrollbar {
+    width: 15px;
+}
+
+#todos-list::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+#todos-list::-webkit-scrollbar-thumb {
+    background-color: #b9b2aa;
+    border-radius: 10px;
+}
+
+#todos-list::-webkit-scrollbar-thumb:hover {
+    background-color: #5E503F;
 }
