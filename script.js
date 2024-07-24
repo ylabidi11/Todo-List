@@ -7,11 +7,6 @@ const DisplayTodos = () => {
 
     for (let i = 0; i < todos.length; i++) {
         let li = document.createElement('li')
-        li.id = 'edit-' + i
-
-        li.addEventListener('dblclick', (event) => {
-            (event.target.type !== "checkbox" && event.target.type !== "submit") && Edit(event)
-        })
 
         // Remove for each li
 
@@ -36,7 +31,11 @@ const DisplayTodos = () => {
         }
 
         let span = document.createElement('span');
-        span.innerHTML = todos[i].todo
+        span.innerText = todos[i].todo
+        span.id = 'edit-' + i
+        span.addEventListener('dblclick', (event) => {
+            Edit(event)
+        })
 
         li.appendChild(toggleButton)
         li.appendChild(span)
@@ -93,13 +92,14 @@ const ToggleAll = () => {
 
 const Edit = (event) => {
     index = event.target.id
+    console.log(index)
     index = index.slice(5)
 
     let li = document.getElementById(event.target.id)
     let input = document.createElement('input')
     input.id = 'input-d'
 
-    input.value = li.innerText.slice(0, li.innerText.length - 1)
+    input.value = li.innerText.slice(0, li.innerText.length)
 
     li.replaceWith(input)
 
