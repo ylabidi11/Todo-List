@@ -134,20 +134,22 @@ li button:hover {
     justify-content: space-around;
     flex-shrink: 2;
     align-items: center;
+    padding-bottom: 5%;
+
 }
 
 .author {
     display: flex;
     gap: 1em;
     background-color: aliceblue;
-    width: 25vh;
-    flex-wrap: wrap;
-    flex-grow: 2;
+    width: 25vw;
+    flex-shrink: 1;
     margin: auto;
     margin-top: 5em;
     justify-content: center;
     border-radius: 1em;
     color: #22333B;
+    transition: width 0.3s ease;
 }
 
 #name {
