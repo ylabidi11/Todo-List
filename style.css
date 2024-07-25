@@ -14,6 +14,7 @@ button {
     text-transform: uppercase;
     font-family: Verdana, Tahoma, sans-serif;
     font-weight: 400;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 button:hover {
@@ -38,8 +39,19 @@ h1 {
     border-radius: 1em;
     text-align: center;
     margin-top: 5%;
-    transition: width 0.5s ease;
-    transition: height 0.5s ease;
+    transition: width 0.5s ease, height 0.5s ease;
+}
+
+@media (max-width: 1200px) and (min-width: 1001px) {
+    .todo {
+        width: 70%;
+    }
+}
+
+@media (max-width: 1000px) and (min-width: 701px) {
+    .todo {
+        width: 80%;
+    }
 }
 
 @media (max-width: 700px) {
@@ -55,27 +67,8 @@ h1 {
     }
 }
 
-@media (min-width: 701px) and (max-width: 1000px) {
-    .todo {
-        width: 80%;
-    }
-}
-
-@media (min-width: 1001px) and (max-width: 1200px) {
-    .todo {
-        width: 70%;
-    }
-}
-
-@media (min-width: 1201px) and (max-width: 1800px) {
-    .todo {
-        width: 60%;
-    }
-}
-
 .add-todo-div {
     display: flex;
-    flex-direction: row;
     justify-content: space-around;
     align-items: center;
     margin-bottom: 2em;
@@ -100,16 +93,19 @@ h1 {
     text-align: center;
 }
 
+#input-todo:focus {
+    outline: none;
+    border-color: black;
+}
+
 #todos-list {
     display: flex;
     flex-direction: column;
     height: 46vh;
-    overflow: hidden;
-    overflow-y: scroll;
     overflow-x: scroll;
+    overflow-y: scroll;
     padding: 0;
-    margin: 0;
-    margin-bottom: 2.4em;
+    margin: 0 0 2.4em 0;
     border-bottom: 2px solid gray;
 }
 
@@ -135,6 +131,11 @@ li>*:nth-child(1) {
     cursor: pointer;
 }
 
+li>*:nth-child(1):hover {
+    background-color: #22333b74;
+    transition: background-color 0.1s ease;
+}
+
 li>*:nth-child(1):checked {
     background-color: #22333B;
     border: none;
@@ -154,11 +155,20 @@ li>*:nth-child(3) {
     margin-right: 5%;
 }
 
+#input-d {
+    text-align: center;
+    border: 2px solid #22333B;
+    border-radius: 0.5em;
+    font-family: Verdana, Tahoma, sans-serif;
+    color: #22333B;
+}
+
 li button {
     padding: 5px;
 }
 
 li button:hover {
+    border: none;
     padding: 7px;
 }
 
@@ -168,7 +178,6 @@ li button:hover {
 
 .all-buttons {
     display: flex;
-    flex-direction: row;
     justify-content: space-around;
     flex-shrink: 1;
     align-items: center;
@@ -179,7 +188,7 @@ li button:hover {
     display: flex;
     gap: 1em;
     background-color: aliceblue;
-    width: 25vw;
+    width: 30vw;
     flex-shrink: 1;
     margin: auto;
     margin-top: 5em;
@@ -189,9 +198,15 @@ li button:hover {
     transition: width 0.5s ease;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 700px) {
     .author {
-        width: 80vw;
+        width: 90%;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 1000px) {
+    .author {
+        width: 80%;
     }
 }
 
@@ -218,14 +233,10 @@ li button:hover {
     border-radius: 10px;
 }
 
-#todos-list::-webkit-scrollbar-thumb:hover {
-    background-color: #5E503F;
-}
-
+#todos-list::-webkit-scrollbar-thumb:hover,
 #todos-list::-webkit-scrollbar-thumb:active {
     background-color: #5E503F;
 }
-
 
 #todos-list::-webkit-scrollbar-corner {
     background-color: #EAE0D5;
