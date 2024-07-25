@@ -92,7 +92,6 @@ const ToggleAll = () => {
 
 const Edit = (event) => {
     index = event.target.id
-    console.log(index)
     index = index.slice(5)
 
     let li = document.getElementById(event.target.id)
