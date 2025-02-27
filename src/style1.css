@@ -11,6 +11,7 @@
     --author-text-color: #22333B;
     --switch-theme-background-color: #FFDEE3;
     --switch-theme-border-color: #FFDEE3;
+    --h1-color: #22333B;
 }
 
 [data-theme="light"] {
@@ -26,6 +27,7 @@
     --author-text-color: #008eb1;
     --switch-theme-background-color: #EAE0D5;
     --switch-theme-border-color: #EAE0D5;
+    --h1-color: #008eb1;
 }
 
 body {
@@ -57,6 +59,7 @@ button:hover {
 
 h1 {
     margin-top: 1em;
+    color: var(--h1-color)
 }
 
 .todo {
@@ -151,7 +154,7 @@ h1 {
     border-radius: 15px;
     height: 70%;
     align-items: center;
-    border: 2px solid var(--input-todo-background-color);
+    border: 2px solid var(--h1-color);
     font-size: 1em;
 }
 
@@ -161,7 +164,7 @@ h1 {
 
 #input-todo:focus {
     outline: none;
-    border-color: var(--background-color);
+    border-color: var(--h1-color);
 }
 
 #todos-list {
