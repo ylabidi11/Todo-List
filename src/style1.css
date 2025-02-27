@@ -1,0 +1,309 @@
+[data-theme="dark"] {
+    --background-color: #22333B;
+    --div-background-color: #EAE0D5;
+    --button-background-color: #d4ccc3;
+    --button-border-color: #5e573f;
+    --button-text-color: #5e573f;
+    --input-todo-background-color: rgb(154, 152, 152);
+    --todo-list-bottom-border-color: gray;
+    --checkbox-background-color: white;
+    --div-border-color: transparent;
+    --author-text-color: #22333B;
+    --switch-theme-background-color: #fbbac1;
+    --switch-theme-border-color: #C00000;
+}
+
+[data-theme="light"] {
+    --background-color: #FFBBC1;
+    --div-background-color: #FFDEE3;
+    --button-background-color: #fbbac1;
+    --button-border-color: #C00000;
+    --button-text-color: #370000;
+    --input-todo-background-color: #C00000;
+    --todo-list-bottom-border-color: #C00000;
+    --checkbox-background-color: white;
+    --div-border-color: #C00000;
+    --author-text-color: #ff6874;
+    --switch-theme-background-color: #EAE0D5;
+    --switch-theme-border-color: #22333B;
+}
+
+body {
+    background-color: var(--background-color);
+    font-family: Verdana, Tahoma, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+button {
+    background-color: var(--button-background-color);
+    padding: 15px;
+    color: var(--button-text-color);
+    border: 2px solid var(--button-border-color);
+    border-radius: 0.5em;
+    text-transform: uppercase;
+    font-family: Verdana, Tahoma, sans-serif;
+    font-weight: 400;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--background-color);
+    color: var(--button-background-color);
+    border: none;
+    cursor: pointer;
+    padding: 17px;
+}
+
+h1 {
+    margin-top: 1em;
+}
+
+.todo {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 40vw;
+    height: 70vh;
+    background-color: var(--div-background-color);
+    border-radius: 1em;
+    border: 2px solid var(--div-border-color);
+    text-align: center;
+    margin-top: 5%;
+    transition: width 0.5s ease, height 0.5s ease;
+}
+
+#switch-theme {
+    align-self: center;
+    width: 2em;
+    height: 1em;
+    position: relative;
+    left: 7%;
+
+    background-color: var(--switch-theme-background-color);
+    border-color: var(--switch-theme-border-color);
+}
+
+@media (max-width: 1200px) and (min-width: 1001px) {
+    .todo {
+        width: 70%;
+    }
+}
+
+@media (max-width: 1000px) and (min-width: 701px) {
+    .todo {
+        width: 80%;
+    }
+}
+
+@media (max-width: 700px) and (min-width: 501px) {
+    .todo {
+        width: 100%;
+    }
+
+    #switch-theme {
+        left: 18%;
+    }
+}
+
+@media (max-width: 500px) and (min-width: 351px) {
+    .todo {
+        width: 100%;
+    }
+    
+    #switch-theme {
+        left: -2%;
+    }
+}
+
+@media (max-width: 350px) {
+    .todo {
+        width: 100%;
+    }
+    #switch-theme {
+        left: -2%;
+    }
+}
+
+@media (max-height: 900px) {
+    .todo {
+        height: 80vh;
+        margin-top: 0.3em;
+    }
+}
+
+.add-todo-div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 2em;
+}
+
+.add-todo-div>*:nth-child(1) {
+    flex: 0 1 60%;
+}
+
+.add-todo-div>*:nth-child(2) {
+    flex: 0 1 20%;
+}
+
+#input-todo {
+    border-radius: 15px;
+    height: 70%;
+    align-items: center;
+    border: 2px solid var(--input-todo-background-color);
+    font-size: 1em;
+}
+
+#input-todo::placeholder {
+    text-align: center;
+}
+
+#input-todo:focus {
+    outline: none;
+    border-color: var(--background-color);
+}
+
+#todos-list {
+    display: flex;
+    flex-direction: column;
+    height: 46vh;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    padding: 0;
+    margin: 0 0 2.4em 0;
+    border-bottom: 2px solid var(--todo-list-bottom-border-color);
+}
+
+#todos-list li {
+    padding-left: 5%;
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2em;
+    align-items: center;
+}
+
+li>*:nth-child(1) {
+    flex: none;
+    width: 1.38em;
+    height: 1.3em;
+    background-color: var(--checkbox-background-color);
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid var(--button-border-color);
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+li>*:nth-child(1):hover {
+    background-color: var(--background-color)74;
+    transition: background-color 0.1s ease;
+}
+
+li>*:nth-child(1):checked {
+    background-color: var(--background-color);
+    border: none;
+}
+
+li>*:nth-child(2) {
+    flex: 1 1 85%;
+    text-align: left;
+}
+
+span::first-letter {
+    text-transform: capitalize;
+}
+
+li>*:nth-child(3) {
+    flex: 1 1 5%;
+    margin-right: 5%;
+}
+
+#input-d {
+    text-align: center;
+    border: 2px solid var(--background-color);
+    border-radius: 0.5em;
+    font-family: Verdana, Tahoma, sans-serif;
+    color: var(--background-color);
+}
+
+li button {
+    padding: 5px;
+}
+
+li button:hover {
+    border: none;
+    padding: 7px;
+}
+
+.crossed span {
+    text-decoration: line-through;
+}
+
+.all-buttons {
+    display: flex;
+    justify-content: space-around;
+    flex-shrink: 1;
+    align-items: center;
+    padding-bottom: 5%;
+}
+
+.author {
+    display: flex;
+    gap: 1em;
+    background-color: var(--checkbox-background-color);
+    width: 30vw;
+    flex-shrink: 1;
+    margin: auto;
+    margin-top: 5em;
+    justify-content: center;
+    border-radius: 1em;
+    color: var(--author-text-color);
+    transition: width 0.5s ease;
+}
+
+@media (max-width: 700px) {
+    .author {
+        width: 90%;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 1000px) {
+    .author {
+        width: 80%;
+    }
+}
+
+@media (max-height: 850px) {
+    .author {
+        margin-top: 2em;
+    }
+}
+
+#name {
+    font-weight: 800;
+}
+
+#todos-list::-webkit-scrollbar {
+    width: 15px;
+}
+
+#todos-list::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+#todos-list::-webkit-scrollbar-thumb {
+    background-color: var(--button-background-color);
+    border-radius: 10px;
+}
+
+#todos-list::-webkit-scrollbar-thumb:hover,
+#todos-list::-webkit-scrollbar-thumb:active {
+    background-color: var(--button-border-color);
+}
+
+#todos-list::-webkit-scrollbar-corner {
+    background-color: var(--div-background-color);
+}

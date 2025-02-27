@@ -1,6 +1,19 @@
-import './style.css'
+import "/src/style1.css"
 
 const todos = []
+
+const themeChanger = () => {
+    const theme = localStorage.getItem("theme")
+    let htmlAttribute = document.querySelector("html")
+
+    if (theme === "dark") {
+        localStorage.setItem("theme", "light")
+        htmlAttribute.setAttribute("data-theme", "light");
+    } else {
+        localStorage.setItem("theme", "dark")
+        htmlAttribute.setAttribute("data-theme", "dark");
+    }
+}
 
 const DisplayTodos = () => {
     let ulList = document.getElementById("todos-list")
@@ -8,22 +21,22 @@ const DisplayTodos = () => {
     document.getElementById("counter").innerText = todos.length + " Left"
 
     for (let i = 0; i < todos.length; i++) {
-        let li = document.createElement('li')
-        li.id = 'li' + i
+        let li = document.createElement("li")
+        li.id = "li" + i
 
         // Remove for each li
 
-        let newRemove = document.createElement('button')
-        newRemove.id = 'remove-' + i
-        newRemove.addEventListener('click', Remove)
-        newRemove.innerHTML = 'X'
+        let newRemove = document.createElement("button")
+        newRemove.id = "remove-" + i
+        newRemove.addEventListener("click", Remove)
+        newRemove.innerHTML = "X"
 
         // Toggle for each li
 
-        let toggleButton = document.createElement('input')
-        toggleButton.type = 'checkbox'
-        toggleButton.id = 'toggle-' + i
-        toggleButton.addEventListener('click', Toggle)
+        let toggleButton = document.createElement("input")
+        toggleButton.type = "checkbox"
+        toggleButton.id = "toggle-" + i
+        toggleButton.addEventListener("click", Toggle)
 
         if (todos[i].completed) {
             toggleButton.checked = true
@@ -33,10 +46,10 @@ const DisplayTodos = () => {
             li.className = "not-crossed both"
         }
 
-        let span = document.createElement('span');
+        let span = document.createElement("span")
         span.innerText = todos[i].todo
-        span.id = 'edit-' + i
-        span.addEventListener('dblclick', (event) => {
+        span.id = "edit-" + i
+        span.addEventListener("dblclick", (event) => {
             Edit(event)
         })
 
@@ -49,10 +62,10 @@ const DisplayTodos = () => {
 }
 
 const Add = () => {
-    let input = document.getElementById("input-todo");
-    if (input.value !== undefined && input.value !== null && input.value !== '') {
+    let input = document.getElementById("input-todo")
+    if (input.value !== undefined && input.value !== null && input.value !== "") {
         todos.push({ todo: input.value, completed: false })
-        input.value = ''
+        input.value = ""
     }
 
     saveStorage()
@@ -103,16 +116,16 @@ const Edit = (event) => {
     index = index.slice(5)
 
     let li = document.getElementById(event.target.id)
-    let input = document.createElement('input')
-    input.id = 'input-d'
+    let input = document.createElement("input")
+    input.id = "input-d"
 
     input.value = li.innerText.slice(0, li.innerText.length)
 
     li.replaceWith(input)
 
-    input.addEventListener('keypress', (event) => {
+    input.addEventListener("keypress", (event) => {
         if (event.key === "Enter") {
-            if (input.value !== '' && input.value !== null && input.value !== undefined && input.value !== ' ') {
+            if (input.value !== "" && input.value !== null && input.value !== undefined && input.value !== " ") {
                 todos[index].todo = input.value
                 saveStorage()
                 DisplayTodos()
@@ -122,8 +135,8 @@ const Edit = (event) => {
         }
     })
 
-    window.addEventListener('click', (event) => {
-        if (event.target !== document.getElementById('input-d')) {
+    window.addEventListener("click", (event) => {
+        if (event.target !== document.getElementById("input-d")) {
             saveStorage()
             DisplayTodos()
         }
@@ -133,15 +146,13 @@ const Edit = (event) => {
 const saveStorage = () => {
     let savedArray = []
     for (let i = 0; i < todos.length; i++) {
-        savedArray.push(todos[i]);
-        console.log(savedArray)
+        savedArray.push(todos[i])
     }
     localStorage.setItem("array", JSON.stringify(savedArray))
 }
 
 const loadStorage = () => {
     const loadArray = JSON.parse(localStorage.getItem("array"))
-    console.log(loadArray)
 
     for (let i = 0; i < loadArray.length; i++) {
         todos.push(loadArray[i])
@@ -166,23 +177,28 @@ const DeleteCompleted = () => {
 }
 
 let addButton = document.getElementById("add-todo-button")
-addButton.addEventListener('click', Add)
+addButton.addEventListener("click", Add)
 
 let toggleAllButton = document.getElementById("toggle-all-button")
-toggleAllButton.addEventListener('click', ToggleAll)
+toggleAllButton.addEventListener("click", ToggleAll)
 
 let deleteAllButton = document.getElementById("delete-all-button")
-deleteAllButton.addEventListener('click', DeleteAll)
+deleteAllButton.addEventListener("click", DeleteAll)
 
 let deleteAllCompleted = document.getElementById("delete-completed-button")
-deleteAllCompleted.addEventListener('click', DeleteCompleted)
+deleteAllCompleted.addEventListener("click", DeleteCompleted)
 
 let addInput = document.getElementById("input-todo")
-addInput.addEventListener('keypress', (event) => {
-    if (event.key === 'Enter') {
+addInput.addEventListener("keypress", (event) => {
+    if (event.key === "Enter") {
         Add()
     }
 })
+
+const themeButton = document.getElementById("switch-theme")
+themeButton.addEventListener('click', themeChanger)
+
+localStorage.setItem("theme", "dark")
 
 loadStorage()
 DisplayTodos()

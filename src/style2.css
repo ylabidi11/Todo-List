@@ -1,15 +1,15 @@
 body {
-    background-color: #22333B;
+    background-color: #FFBBC1;
     font-family: Verdana, Tahoma, sans-serif;
     font-weight: 400;
     font-style: normal;
 }
 
 button {
-    background-color: #d4ccc3;
+    background-color: #fbbac1;
     padding: 15px;
-    color: #5E503F;
-    border: 2px solid #5E503F;
+    color: #370000;
+    border: 2px solid #C00000;
     border-radius: 0.5em;
     text-transform: uppercase;
     font-family: Verdana, Tahoma, sans-serif;
@@ -18,14 +18,12 @@ button {
 }
 
 button:hover {
-    background-color: #22333B;
-    color: #d4ccc3;
-    border: none;
+    background-color: rgb(255, 145, 154);
     cursor: pointer;
-    padding: 17px;
 }
 
 h1 {
+    color:#370000;
     margin-top: 1em;
 }
 
@@ -35,8 +33,9 @@ h1 {
     margin: auto;
     width: 40vw;
     height: 70vh;
-    background-color: #EAE0D5;
+    background-color: #FFDEE3;
     border-radius: 1em;
+    border: 2px solid #C00000;
     text-align: center;
     margin-top: 5%;
     transition: width 0.5s ease, height 0.5s ease;
@@ -86,7 +85,7 @@ h1 {
     border-radius: 15px;
     height: 70%;
     align-items: center;
-    border: 2px solid rgb(154, 152, 152);
+    border: 2px solid #C00000;
     font-size: 1em;
 }
 
@@ -107,7 +106,7 @@ h1 {
     overflow-y: scroll;
     padding: 0;
     margin: 0 0 2.4em 0;
-    border-bottom: 2px solid gray;
+    border-bottom: 2px solid #FF3334;
 }
 
 #todos-list li {
@@ -125,7 +124,7 @@ li>*:nth-child(1) {
     background-color: white;
     border-radius: 50%;
     vertical-align: middle;
-    border: 1px solid #5E503F;
+    border: 1px solid #C00000;
     appearance: none;
     -webkit-appearance: none;
     outline: none;
@@ -133,13 +132,12 @@ li>*:nth-child(1) {
 }
 
 li>*:nth-child(1):hover {
-    background-color: #22333b74;
+    background-color: #FFBBC174;
     transition: background-color 0.1s ease;
 }
 
 li>*:nth-child(1):checked {
-    background-color: #22333B;
-    border: none;
+    background-color: #ff838e;
 }
 
 li>*:nth-child(2) {
@@ -158,19 +156,14 @@ li>*:nth-child(3) {
 
 #input-d {
     text-align: center;
-    border: 2px solid #22333B;
+    border: 2px solid #FFBBC1;
     border-radius: 0.5em;
     font-family: Verdana, Tahoma, sans-serif;
-    color: #22333B;
+    color: #FFBBC1;
 }
 
 li button {
     padding: 5px;
-}
-
-li button:hover {
-    border: none;
-    padding: 7px;
 }
 
 .crossed span {
@@ -195,7 +188,7 @@ li button:hover {
     margin-top: 5em;
     justify-content: center;
     border-radius: 1em;
-    color: #22333B;
+    color: #ff6874;
     transition: width 0.5s ease;
 }
 
@@ -230,15 +223,26 @@ li button:hover {
 }
 
 #todos-list::-webkit-scrollbar-thumb {
-    background-color: #b9b2aa;
+    background-color: #ffcaca;
     border-radius: 10px;
 }
 
 #todos-list::-webkit-scrollbar-thumb:hover,
 #todos-list::-webkit-scrollbar-thumb:active {
-    background-color: #5E503F;
+    background-color: #ffb2b2;
 }
 
 #todos-list::-webkit-scrollbar-corner {
-    background-color: #EAE0D5;
+    background-color: #FFDEE3;
+}
+
+#switch-theme {
+    align-self: center;
+    width: 2em;
+    height: 1em;
+    position:relative;
+    left: 7%;
+
+    background-color: #fbbac1;
+    border-color: #C00000;
 }
