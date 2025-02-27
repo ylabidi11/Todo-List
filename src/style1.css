@@ -17,13 +17,13 @@
     --background-color: #FFBBC1;
     --div-background-color: #FFDEE3;
     --button-background-color: #fbbac1;
-    --button-border-color: #C00000;
-    --button-text-color: #370000;
-    --input-todo-background-color: #C00000;
-    --todo-list-bottom-border-color: #C00000;
+    --button-border-color: #008eb1;
+    --button-text-color: #008eb1;
+    --input-todo-background-color: #008eb1;
+    --todo-list-bottom-border-color: #008eb1;
     --checkbox-background-color: white;
-    --div-border-color: #C00000;
-    --author-text-color: #ff6874;
+    --div-border-color: #008eb1;
+    --author-text-color: #008eb1;
     --switch-theme-background-color: #EAE0D5;
     --switch-theme-border-color: #EAE0D5;
 }
