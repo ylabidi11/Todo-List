@@ -12,6 +12,11 @@
     --switch-theme-background-color: #FFDEE3;
     --switch-theme-border-color: #FFDEE3;
     --h1-color: #22333B;
+    --button-hover-background-color: #ae9d8c;
+    --button-hover-text-color: #22333B;
+    --checkbox-hover-color: #2c3f48c2;
+    --checkbox-true-color: #22333B;
+    --scrollbar-used-color: #45331d;
 }
 
 [data-theme="light"] {
@@ -28,6 +33,11 @@
     --switch-theme-background-color: #EAE0D5;
     --switch-theme-border-color: #EAE0D5;
     --h1-color: #008eb1;
+    --button-hover-background-color: #f5959d;
+    --button-hover-text-color: #008eb1;
+    --checkbox-hover-color: #f5959d3f;
+    --checkbox-true-color: #00708c;
+    --scrollbar-used-color: #f5959d;
 }
 
 body {
@@ -50,8 +60,8 @@ button {
 }
 
 button:hover {
-    background-color: var(--background-color);
-    color: var(--button-background-color);
+    background-color: var(--button-hover-background-color);
+    color: var(--button-hover-text-color);
     border: none;
     cursor: pointer;
     padding: 17px;
@@ -113,7 +123,7 @@ h1 {
     .todo {
         width: 100%;
     }
-    
+
     #switch-theme {
         left: -2%;
     }
@@ -123,6 +133,7 @@ h1 {
     .todo {
         width: 100%;
     }
+
     #switch-theme {
         left: -2%;
     }
@@ -201,12 +212,12 @@ li>*:nth-child(1) {
 }
 
 li>*:nth-child(1):hover {
-    background-color: var(--background-color)74;
+    background-color: var(--checkbox-hover-color);
     transition: background-color 0.1s ease;
 }
 
 li>*:nth-child(1):checked {
-    background-color: var(--background-color);
+    background-color: var(--checkbox-true-color);
     border: none;
 }
 
@@ -304,7 +315,7 @@ li button:hover {
 
 #todos-list::-webkit-scrollbar-thumb:hover,
 #todos-list::-webkit-scrollbar-thumb:active {
-    background-color: var(--button-border-color);
+    background-color: var(--scrollbar-used-color);
 }
 
 #todos-list::-webkit-scrollbar-corner {
