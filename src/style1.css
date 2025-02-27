@@ -9,8 +9,8 @@
     --checkbox-background-color: white;
     --div-border-color: transparent;
     --author-text-color: #22333B;
-    --switch-theme-background-color: #fbbac1;
-    --switch-theme-border-color: #C00000;
+    --switch-theme-background-color: #FFDEE3;
+    --switch-theme-border-color: #FFDEE3;
 }
 
 [data-theme="light"] {
@@ -25,7 +25,7 @@
     --div-border-color: #C00000;
     --author-text-color: #ff6874;
     --switch-theme-background-color: #EAE0D5;
-    --switch-theme-border-color: #22333B;
+    --switch-theme-border-color: #EAE0D5;
 }
 
 body {
@@ -81,7 +81,7 @@ h1 {
     left: 7%;
 
     background-color: var(--switch-theme-background-color);
-    border-color: var(--switch-theme-border-color);
+    border-color: var(--switch-theme-background-color);
 }
 
 @media (max-width: 1200px) and (min-width: 1001px) {
